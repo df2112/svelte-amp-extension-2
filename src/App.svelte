@@ -1,13 +1,12 @@
 <script lang="ts">
   import { ContentEditorExtension, init } from "dc-extensions-sdk";
 
-  const editor = document.querySelector("#json") as HTMLTextAreaElement;
-
   let initialized = initialize();
 
   async function initialize() {
     const sdk = await <ContentEditorExtension>init()
 
+    const editor = document.querySelector("#json") as HTMLTextAreaElement;
     const formModel = await sdk.form.getValue()
     const formValue = JSON.stringify(formModel, null, 2);
     editor.value = formValue;
