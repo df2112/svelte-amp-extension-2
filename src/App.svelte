@@ -26,9 +26,7 @@
 </script>
 
 <main>
-  {#await initialized then value}
-    <textarea id="json"></textarea>
-  {/await}
+  <textarea id="json"></textarea>
 </main>
 
 <style>
